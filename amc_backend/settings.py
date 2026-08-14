@@ -74,8 +74,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = False
 
 ROOT_URLCONF = 'amc_backend.urls'
 
@@ -152,7 +150,6 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
@@ -162,11 +159,15 @@ SIMPLE_JWT = {
 # Goole auth (sso)
 GOOGLE_CLIENT_ID = "788417240730-9ff2mhn7oovb2k4i8k8aenh47u0i7kmp.apps.googleusercontent.com"
 
+CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOWED_ORIGINS = [
     "https://amc-frontend-five.vercel.app",
     "http://localhost:5173",
     "http://localhost:3000",
 ]
+
+CORS_ALLOW_CREDENTIALS = False
 
 #Handling static files in production
 STATIC_URL = "/static/"
