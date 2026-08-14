@@ -20,7 +20,7 @@ class TblActivityLog(models.Model):
     logged_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_activity_log'
     
 
@@ -40,7 +40,7 @@ class TblAuditLog(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_audit_log'
 
 
@@ -66,7 +66,7 @@ class TblContractDetails(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_contract_details'
 
 
@@ -75,7 +75,7 @@ class TblContractStatus(models.Model):
     status_label = models.CharField(unique=True, max_length=50)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_contract_status'
 
 
@@ -93,7 +93,7 @@ class TblContractor(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_contractor'
 
 
@@ -109,7 +109,7 @@ class TblDocuments(models.Model):
     uploaded_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_documents'
 
 
@@ -133,7 +133,7 @@ class TblEquipmentDetails(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_equipment_details'
 
 
@@ -149,7 +149,7 @@ class TblNotifications(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_notifications'
 
 
@@ -168,7 +168,7 @@ class TblPpmSchedule(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_ppm_schedule'
 
 
@@ -177,7 +177,7 @@ class TblPpmStatus(models.Model):
     status_label = models.CharField(unique=True, max_length=50)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_ppm_status'
 
 
@@ -188,7 +188,7 @@ class TblRegion(models.Model):
     is_active = models.BooleanField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_region'
 
 
@@ -215,7 +215,7 @@ class TblSite(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_site'
 
 
@@ -231,5 +231,5 @@ class TblUsers(models.Model):
     last_login = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tbl_users'
