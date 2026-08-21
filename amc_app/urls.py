@@ -3,6 +3,10 @@ from django.urls import path
 from .google_auth import google_login_user
 from .views import (
     
+    get_dashboard_data,
+    get_expired_equipment,
+    get_sites_from_last_year,
+    
     get_sites,
     get_site_details, 
     create_site_with_details,
@@ -56,4 +60,9 @@ urlpatterns = [
     path('users/', list_users, name='list_users'),
     path('edit-user/<int:user_id>/', edit_user, name='edit_user'),
     path('delete-user/<int:user_id>/', delete_user, name='delete_user'),
+
+    #Dashboard APIs
+    path('dashboard/', get_dashboard_data, name='get_dashboard_data'),
+    path('last-year-sites/', get_sites_from_last_year, name='get_sites_from_last_year'),
+    path('expired-equipment/', get_expired_equipment, name='get_expired_equipment'),
 ]

@@ -25,10 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-je@85&t+7aebl^-(1vilo@ksg1w0r8p07_^8q!i3q!#_z0an!y'
 
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY",
-    "unsafe-development-key-only"
-)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -153,9 +149,19 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY",
+    "4E7_VFxDBec8KBw9euN-BDVlsiVJopodzQhlHHTr8jEDnHpYx0NFzKyOKl6HQJn9Q3MHn9Z8D5teyeQWOrvU2g"
+)
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": os.environ.get(
+        "JWT_SIGNING_KEY",
+        "mAiqsnkUEUJ5U_62VfkSctMXYQb-OYMllg0Kqurhz-K7tUZ_MI_c-TF5imWBjwbhOa5mc7JqCywEuSnjy3NctA"
+    ),
 }
 
 # Goole auth (sso)
@@ -172,14 +178,14 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = False
 
 #Handling static files in production
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_URL = "/static/"
+# STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+# STORAGES = {
+#     "default": {
+#         "BACKEND": "django.core.files.storage.FileSystemStorage",
+#     },
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
